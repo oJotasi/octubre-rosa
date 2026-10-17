@@ -131,7 +131,7 @@ window.addEventListener("offline", connection);
 window.addEventListener("online", () => { connection(); retry(); });
 connection();
 
-// Borra el recubrimiento y confirma después de raspar el 40 % real del área.
+// Borra el recubrimiento y confirma después de raspar el 60 % real del área.
 function scratch(canvas) {
   const context = canvas.getContext("2d", { willReadFrequently: true });
   if (!context) return () => {};
@@ -158,8 +158,8 @@ function scratch(canvas) {
     let clear = 0, samples = 0;
     for (let y = 0; y < canvas.height; y += 4) for (let x = 0; x < canvas.width; x += 4) { samples++; if (pixels[(y * canvas.width + x) * 4 + 3] < 128) clear++; }
     const fraction = clear / samples;
-    canvas.closest("article").querySelector(".scratch-progress").textContent = `${Math.min(100, Math.round(fraction / .4 * 100))}%`;
-    if (fraction >= .4 && !confirmed && !busy && saved.answers[saved.index] === null) { confirmed = true; void confirm(option); }
+    canvas.closest("article").querySelector(".scratch-progress").textContent = `${Math.min(100, Math.round(fraction / .6 * 100))}%`;
+    if (fraction >= .6 && !confirmed && !busy && saved.answers[saved.index] === null) { confirmed = true; void confirm(option); }
   }
   function erase(event) {
     const rect = canvas.getBoundingClientRect();
