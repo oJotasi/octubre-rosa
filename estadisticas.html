@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Estadísticas · Octubre Rosa</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="estadisticas.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="header" hidden>
+      <a class="brand" href="./"><img class="brand-ribbon" src="ribbon.svg" alt=""><span>Octubre <span class="brand-rosa">Rosa</span></span></a>
+      <a class="back-link" href="./">Volver al juego →</a>
+    </header>
+    <main id="restricted" class="restricted"><p role="status">Cargando…</p></main>
+    <main id="panel" class="stats-section" hidden>
+      <div class="stats-heading"><h1>Estadísticas</h1><button id="refresh" class="button secondary">Actualizar</button></div>
+      <div id="error" class="error-box" role="alert" hidden></div>
+      <div class="stats-cards" aria-live="polite">
+        <article class="stat-card featured"><span class="stat-icon" data-icon="chart"></span><p>Partidas completadas</p><strong id="total">—</strong></article>
+        <article class="stat-card"><span class="stat-icon" data-icon="check"></span><p>Partidas correctas</p><strong id="correct">—</strong></article>
+        <article class="stat-card"><span class="stat-icon" data-icon="info"></span><p>Partidas incorrectas</p><strong id="incorrect">—</strong></article>
+        <article class="stat-card"><span class="stat-icon" data-icon="sparkle"></span><p>Porcentaje de partidas correctas</p><strong id="percentage">—</strong></article>
+      </div>
+      <section id="distribution" class="distribution" hidden>
+        <div><h2>Resultados</h2><span id="updated"></span></div>
+        <div id="chart" class="distribution-track" role="img"><span id="bar"></span></div>
+        <div id="legend" class="distribution-legend"><span><i></i><span id="correct-label"></span></span><span><i></i><span id="incorrect-label"></span></span></div>
+        <div id="empty" class="empty-state" hidden><h3>Todavía no hay partidas completadas.</h3><a class="text-button" href="./">Ir al juego →</a></div>
+      </section>
+      <p class="stats-footnote">Solo se cuentan partidas finalizadas. Actualización cada 30 segundos.</p>
+      <section class="access-qr"><h2>Acceso al juego</h2><img src="acceso-qr.svg" width="180" height="180" alt="QR para abrir Octubre Rosa"><a class="text-button" href="acceso-qr.svg" download="octubre-rosa-qr.svg">Descargar QR</a></section>
+    </main>
+    <footer class="footer"><span>Octubre Rosa</span></footer>
+  </div>
+  <noscript>Activá JavaScript para consultar las estadísticas.</noscript>
+</body>
+</html>
