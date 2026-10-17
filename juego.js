@@ -158,7 +158,7 @@ function scratch(canvas) {
     let clear = 0, samples = 0;
     for (let y = 0; y < canvas.height; y += 4) for (let x = 0; x < canvas.width; x += 4) { samples++; if (pixels[(y * canvas.width + x) * 4 + 3] < 128) clear++; }
     const fraction = clear / samples;
-    canvas.closest("article").querySelector(".scratch-progress").textContent = `${Math.min(100, Math.round(fraction / .8 * 100))}%`;
+    canvas.closest("article").querySelector(".scratch-progress").textContent = `${Math.floor(fraction * 100)}%`;
     if (fraction >= .8 && !confirmed && !busy && saved.answers[saved.index] === null) { confirmed = true; void confirm(option); }
   }
   function erase(event) {
